@@ -1,0 +1,11 @@
+UIMA in Debian
+==============
+
+To ease user and system's administrator work, we set "org.apache.uima.jarpath"
+system property to include the following directories:
+ * /usr/share/uima/components/
+ * /usr/local/share/uima/components/
+ * $HOME/.uima/components/
+
+This will allow UIMA to include every JAR in those directories directly in its
+classpath (for PEAR components for examples).

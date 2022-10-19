@@ -1,0 +1,273 @@
+uimaj (2.10.2-4) unstable; urgency=medium
+
+  [ Hideki Yamane ]
+  * Team upload.
+  * Drop libuima-adapter-soap-java and add Breaks: to remove unnecessary
+    empty package (Closes: #987461)
+
+  [ tony mancill ]
+  * Remove versioned Breaks: libuima-adapter-soap-java (See: #987461)
+
+ -- tony mancill <tmancill@debian.org>  Tue, 22 Jun 2021 09:45:29 -0700
+
+uimaj (2.10.2-3) unstable; urgency=medium
+
+  * Team upload.
+  * No longer ship broken symlinks (Closes: #924224)
+  * Bump Standards-Version to 4.3.0
+  * Update Homepage URL to use https
+
+ -- tony mancill <tmancill@debian.org>  Sun, 10 Mar 2019 15:42:41 -0700
+
+uimaj (2.10.2-2) unstable; urgency=medium
+
+  * Team upload.
+  * No longer build the uimaj-adapter-soap module
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Fri, 30 Nov 2018 09:07:17 +0100
+
+uimaj (2.10.2-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+    - Refreshed the patches
+    - Fixes CVE-2017-15691: XML external entity expansion (XXE) attack exposure
+      (Closes: #897009)
+  * Fixed the build failure with Java 11 (Closes: #912268)
+  * Standards-Version updated to 4.2.1
+  * Use salsa.debian.org Vcs-* URLs
+  * Removed the debian/orig-tar.sh script
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Tue, 30 Oct 2018 10:43:18 +0100
+
+uimaj (2.10.1-2) unstable; urgency=medium
+
+  * Team upload.
+  * Fixed the build failure with Java 9 (Closes: #873249)
+  * Removed the broken css symlinks (Closes: #858473)
+  * Standards-Version updated to 4.1.3
+  * Switch to debhelper level 11
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Fri, 09 Mar 2018 15:01:50 +0100
+
+uimaj (2.10.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+    - Refreshed the patches
+  * Standards-Version updated to 4.1.0
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Wed, 20 Sep 2017 13:44:55 +0200
+
+uimaj (2.10.0-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+    - Refreshed the patches
+    - Build depend on junit4 instead of junit
+  * Removed the unused build dependency on libmaven-site-plugin-java
+  * Standards-Version updated to 4.0.0
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Tue, 25 Jul 2017 01:32:13 +0200
+
+uimaj (2.9.0-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+    - Refreshed the patches
+    - No longer build Java 5 compatible bytecode
+  * Build with the DH sequencer instead of CDBS
+  * Removed the unused build dependency on ant
+  * Standards-Version updated to 3.9.8
+  * Switch to debhelper level 10
+  * Use secure Vcs-* URLs
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Fri, 18 Nov 2016 09:52:28 +0100
+
+uimaj (2.8.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+    - Refreshed the patches
+  * Removed the build dependency on maven2
+  * Depend on libmaven3-core-java instead of libmaven2-core-java
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Wed, 09 Dec 2015 17:39:35 +0100
+
+uimaj (2.7.0-1) unstable; urgency=medium
+
+  * New upstream release
+    - Refreshed the patches
+    - Ignore the new uimaj-json module
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Mon, 01 Jun 2015 17:10:12 +0200
+
+uimaj (2.6.0-1) unstable; urgency=medium
+
+  * New upstream release
+    - Refreshed the patches
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Fri, 23 May 2014 23:29:24 +0200
+
+uimaj (2.5.0-1) unstable; urgency=low
+
+  * New upstream release
+    - Refreshed the patches
+    - Removed java7-compat.diff (fixed upstream)
+    - Added the new module jcasgen-maven-plugin to libuima-tools-java
+  * debian/control:
+    - Use canonical URLs for the Vcs-* fields
+    - Standards-Version updated 3.9.5 (no changes)
+  * Switched to debhelper level 9
+  * Use XZ compression for the upstream tarball
+  * debian/watch: Updated to detect the latest release
+  * debian/rules: Fixed the clean target when used after an incomplete build
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Sat, 22 Mar 2014 11:27:38 +0100
+
+uimaj (2.4.0-3) unstable; urgency=low
+
+  * Team upload.
+  * Removed the dependency on libgeronimo-activation-1.1-spec-java
+  * Updated Standards-Version to 3.9.4 (no changes)
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Sun, 16 Jun 2013 10:46:42 +0200
+
+uimaj (2.4.0-2) unstable; urgency=low
+
+  * d/patches/java7-compat.diff: Fix FTBFS with Java7.
+  * d/control: Bump Standards-Version to 3.9.3: no changes needed.
+  * d/copyright: Update to copyright format 1.0.
+
+ -- Damien Raude-Morvan <drazzib@debian.org>  Wed, 27 Jun 2012 00:26:11 +0200
+
+uimaj (2.4.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Refresh all patches.
+  * d/rules: Remove DEB_BUILDDIR as pom.xml is now at root of tarball.
+  * d/rules: Use DEB_MAVEN_BUILD_TARGET to install before Javadoc
+    - Add Build-Depends on libmaven-install-plugin-java.
+  * d/libuima-core-java.poms: Use this file to install JARs instead of d/rules.
+  * d/control, d/*.install: Wrap-and-sort
+
+ -- Damien Raude-Morvan <drazzib@debian.org>  Fri, 20 Jan 2012 00:44:30 +0100
+
+uimaj (2.3.1-2) unstable; urgency=low
+
+  * Team upload.
+  * Add Build-Depends on libmaven-plugin-tools-java (>= 2.8). (Closes: #652806).
+  * Fix several lintian warning with copyright file.
+
+ -- Miguel Landaeta <miguel@miguel.cc>  Fri, 23 Dec 2011 00:55:34 +0100
+
+uimaj (2.3.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Disable docs generation, for now. Upstream build system use too much
+    unpackaged components:
+    - d/uima-doc.install: Don't install documentation.
+    - d/rules: Don't build Docbook documentation.
+    - d/*.doc-base.*: Disabled.
+  * d/maven.rules: force usage of "debian" release number for Maven artifacts.
+  * d/maven.properties: Force 1.5 bytecode format during build.
+  * d/patches/disable_internal_javadoc: Disable upstram javadoc handling
+    since debian-maven-helper already launch that.
+  * d/patches/build-helper-verison.diff: Add mandatory "goal" parameter
+    for Debian builder helper maven-plugin version.
+  * d/control: Bump Standards-Version to 3.9.2: no changes needed.
+  * d/control: Add Build-Depends on libbuild-helper-maven-plugin-java.
+
+ -- Damien Raude-Morvan <drazzib@debian.org>  Mon, 22 Aug 2011 23:11:58 +0200
+
+uimaj (2.3.0-2) unstable; urgency=low
+
+  * d/control: Fix Homepage URL as UIMA project as been promoted to
+    Top Level project by ASF.
+  * d/control: Bump Standards-Version to 3.9.1: no changes needed.
+  * d/rules: Use mh_clean (do B-D on maven-debian-helper >= 1.1).
+  * d/rules, d/*.poms: reorganisation of POMs patching. All POMs files
+    are now declared in d/libuima-core-java.poms (so that patch/unpatch
+    all together) but installed in each packages manually.
+    Closes: #591143.
+  * Drop all patches regarding disabled Maven plugins and handle that in
+    d/maven.ignoreRules and d/maven.cleanIgnoreRules.
+
+ -- Damien Raude-Morvan <drazzib@debian.org>  Thu, 05 Aug 2010 16:32:47 +0200
+
+uimaj (2.3.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Initial release for Debian (Closes: #567777)
+
+ -- Damien Raude-Morvan <drazzib@debian.org>  Mon, 26 Apr 2010 22:22:45 +0200
+
+uimaj (2.2.2-0ubuntu11) hardy; urgency=low
+
+  * Added sources into the JAR
+  * Corrected upstream version in libraries files names
+
+ -- Fabien Poulard <fabien.poulard@univ-nantes.fr>  Fri, 19 Sep 2008 12:20:00 +0200
+
+uimaj (2.2.2-0ubuntu10) hardy; urgency=low
+
+  * Added uima-examples.jar into uima-examples package
+  * Moved sources into another package
+  * Added menu entries, freedesktop compliants
+
+ -- Fabien Poulard <fabien.poulard@univ-nantes.fr>  Tue, 9 Sep 2008 18:20:00 +0200
+
+uimaj (2.2.2-0ubuntu9) hardy; urgency=low
+
+  * Fixed documentation storage
+
+ -- Fabien Poulard <fabien.poulard@univ-nantes.fr>  Mon, 10 Jul 2008 15:31:00 +0200
+
+uimaj (2.2.2-0ubuntu8) hardy; urgency=low
+
+  * Fixed the jcasgen script that was failing to launch
+
+ -- Fabien Poulard <fabien.poulard@univ-nantes.fr>  Mon, 09 Jul 2008 18:11:00 +0200
+
+uimaj (2.2.2-0ubuntu7) hardy; urgency=low
+
+  * Add examples package, need to be reworked
+
+ -- Fabien Poulard <fabien.poulard@univ-nantes.fr>  Mon, 08 Jul 2008 17:51:00 +0200
+
+uimaj (2.2.2-0ubuntu6) hardy; urgency=low
+
+  * Change section to be in multiverse
+
+ -- Fabien Poulard <fabien.poulard@univ-nantes.fr>  Mon, 07 Jul 2008 11:17:00 +0200
+
+uimaj (2.2.2-0ubuntu5) hardy; urgency=low
+
+  * Now configUIMA.sh take care of adding components jars into the UIMA_CLASSPATH
+
+ -- Fabien Poulard <fabien.poulard@univ-nantes.fr>  Mon, 07 Jul 2008 10:44:45 +0200
+
+uimaj (2.2.2-0ubuntu4) hardy; urgency=low
+
+  * Fix bug in configUIMA.sh
+
+ -- Fabien Poulard <fabien.poulard@univ-nantes.fr>  Fri, 04 Jul 2008 19:04:58 +0200
+
+uimaj (2.2.2-0ubuntu3) hardy; urgency=low
+
+  * Fixes concerning Debian Policy
+
+ -- Fabien Poulard <fabien.poulard@univ-nantes.fr>  Fri, 04 Jul 2008 17:38:58 +0200
+	
+uimaj (2.2.2-0ubuntu2) hardy; urgency=low
+
+  * Fix bug : erasing the value of UIMA_CLASSPATH
+
+ -- Fabien Poulard <fabien.poulard@univ-nantes.fr>  Fri, 04 Jul 2008 09:46:41 +0200
+
+uimaj (2.2.2-0ubuntu1) hardy; urgency=low
+
+  * Initial release
+
+ -- Fabien Poulard <fabien.poulard@univ-nantes.fr>  Thu, 03 Jul 2008 16:45:34 +0200
+

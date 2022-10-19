@@ -1,0 +1,15 @@
+--- a/uimaj-core/pom.xml
++++ b/uimaj-core/pom.xml
+@@ -248,6 +248,12 @@
+         <artifactId>build-helper-maven-plugin</artifactId>
+         <executions>
+           <execution>
++            <id>parse-version</id>
++            <goals>
++              <goal>parse-version</goal>
++            </goals>
++          </execution>
++          <execution>
+             <id>addVersionSrc</id>
+             <goals><goal>add-source</goal></goals>
+             <configuration>

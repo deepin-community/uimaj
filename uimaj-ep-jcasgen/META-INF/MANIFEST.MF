@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1509395895358
+Build-Date: 171030_2032
+Build-Jdk: 1.8.0_151
+Built-By: MarshallSchor
+Bundle-Activator: org.apache.uima.jcas.jcasgenp.JgPlugin
+Bundle-Description: Provides a connection to the JCasGen tooling, for   
+  the Component Descriptor Editor
+Bundle-DocURL: http://www.apache.org/
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: Apache UIMA Eclipse: uimaj-ep-jcasgen
+Bundle-SymbolicName: org.apache.uima.jcas.jcasgenp;singleton:=true
+Bundle-Vendor: The Apache Software Foundation
+Bundle-Version: 2.10.2
+Created-By: Apache Maven Bundle Plugin
+Eclipse-AutoStart: true
+Export-Package: org.apache.uima.jcas.jcasgenp;version="2.10.2"
+Ignore-Package: org.eclipse.core.runtime
+Implementation-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Implementation-Title: Apache UIMA Eclipse: uimaj-ep-jcasgen
+Implementation-Url: http://uima.apache.org
+Implementation-Vendor: The Apache Software Foundation
+Implementation-Vendor-Id: org.apache.uima
+Implementation-Version: 2.10.2
+Import-Package: org.apache.uima.tools.jcasgen,org.eclipse.core.resources
+ ,org.eclipse.emf.codegen.jmerge,org.eclipse.jdt.core.jdom,org.osgi.fram
+ ework;version="[1.3,2)"
+Plugin-Class: org.apache.uima.jcas.jcasgenp.JgPlugin
+Project-Title: Apache UIMA
+Require-Bundle: org.eclipse.core.runtime
+Tool: Bnd-1.50.0

@@ -1,0 +1,81 @@
+// ------------------------------------------------------------------
+// Transitive dependencies of this project determined from the
+// maven pom organized by organization.
+// ------------------------------------------------------------------
+
+Apache UIMA Java SDK: uimaj
+
+
+From: 'an unknown organization'
+  - axis  axis:axis:jar:1.3
+
+  - axis-jaxrpc  axis:axis-jaxrpc:jar:1.3
+
+  - axis-saaj  axis:axis-saaj:jar:1.3
+
+  - Discovery  commons-discovery:commons-discovery:jar:0.2
+
+  - common  org.eclipse.emf:common:jar:2.1.0
+
+  - Equinox Application Container (http://www.eclipse.org) org.eclipse.equinox:app:jar:1.3.200-v20130910-1609
+    License: Eclipse Public License - v 1.0  (http://www.eclipse.org/org/documents/epl-v10.html)
+  - Common Eclipse Runtime (http://www.eclipse.org) org.eclipse.equinox:common:jar:3.6.200-v20130402-1505
+    License: Eclipse Public License - v 1.0  (http://www.eclipse.org/org/documents/epl-v10.html)
+  - Extension Registry Support (http://www.eclipse.org) org.eclipse.equinox:registry:jar:3.5.400-v20140428-1507
+    License: Eclipse Public License - v 1.0  (http://www.eclipse.org/org/documents/epl-v10.html)
+  - WSDL4J (http://sf.net/projects/wsdl4j) wsdl4j:wsdl4j:jar:1.5.1
+
+
+From: 'Apache Software Foundation' (http://www.apache.org)
+  - Activation 1.0.2 (http://geronimo.apache.org/specs/geronimo-activation_1.0.2_spec) org.apache.geronimo.specs:geronimo-activation_1.0.2_spec:jar:1.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'FasterXML' (http://fasterxml.com/)
+  - Jackson-core (http://wiki.fasterxml.com/JacksonHome) com.fasterxml.jackson.core:jackson-core:bundle:2.4.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'The Apache Software Foundation' (http://jakarta.apache.org)
+  - Logging (http://jakarta.apache.org/commons/logging/) commons-logging:commons-logging:jar:1.0.4
+    License: The Apache Software License, Version 2.0  (/LICENSE.txt)
+
+From: 'The Apache Software Foundation' (http://www.apache.org/)
+  - Apache UIMA Base: jVinci: Vinci Transport Library (http://uima.apache.org) org.apache.uima:jVinci:jar:2.10.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache UIMA Base: uimaj-adapter-soap: SOAP Adapter (http://uima.apache.org) org.apache.uima:uimaj-adapter-soap:jar:2.10.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache UIMA Base: uimaj-adapter-vinci: Vinci Adapter (http://uima.apache.org) org.apache.uima:uimaj-adapter-vinci:jar:2.10.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache UIMA Base: uimaj-bootstrap (http://uima.apache.org) org.apache.uima:uimaj-bootstrap:jar:2.10.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache UIMA Base: uimaj-core (http://uima.apache.org) org.apache.uima:uimaj-core:jar:2.10.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache UIMA Base: uimaj-cpe: Collection Processing Engine (http://uima.apache.org) org.apache.uima:uimaj-cpe:jar:2.10.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache UIMA Base: uimaj-document-annotation (http://uima.apache.org) org.apache.uima:uimaj-document-annotation:jar:2.10.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache UIMA Eclipse: uimaj-ep-cas-editor (http://uima.apache.org) org.apache.uima:uimaj-ep-cas-editor:jar:2.10.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache UIMA Eclipse: uimaj-ep-cas-editor-ide (http://uima.apache.org) org.apache.uima:uimaj-ep-cas-editor-ide:jar:2.10.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache UIMA Eclipse: uimaj-ep-configurator: Descriptor Editor (http://uima.apache.org) org.apache.uima:uimaj-ep-configurator:jar:2.10.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache UIMA Eclipse: uimaj-ep-debug (http://uima.apache.org) org.apache.uima:uimaj-ep-debug:jar:2.10.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache UIMA Eclipse: uimaj-ep-jcasgen (http://uima.apache.org) org.apache.uima:uimaj-ep-jcasgen:jar:2.10.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache UIMA Eclipse: uimaj-ep-launcher (http://uima.apache.org) org.apache.uima:uimaj-ep-launcher:jar:2.10.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache UIMA Eclipse: uimaj-ep-pear-packager (http://uima.apache.org) org.apache.uima:uimaj-ep-pear-packager:jar:2.10.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache UIMA Eclipse: uimaj-ep-runtime (http://uima.apache.org) org.apache.uima:uimaj-ep-runtime:jar:2.10.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache UIMA Base: uimaj-examples: SDK Examples (http://uima.apache.org) org.apache.uima:uimaj-examples:jar:2.10.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache UIMA Base: uimaj-json: JSON (http://uima.apache.org/uimaj-json) org.apache.uima:uimaj-json:jar:2.10.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache UIMA Base: uimaj-tools: Tools (http://uima.apache.org) org.apache.uima:uimaj-tools:jar:2.10.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+
+

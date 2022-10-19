@@ -1,0 +1,8 @@
+modules.diff
+script.diff
+disable_ecore.diff
+#docbook_tool.diff
+build-helper-version.diff
+disable_internal_javadoc.diff
+maven-plugin-configuration.diff
+disable-integration-tests.diff

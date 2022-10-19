@@ -1,0 +1,10 @@
+Document: uima-api
+Title: API JavaDoc for UIMA Java SDK
+Author: Apache Software Foundation
+Abstract: Javadocs programmer API of UIMA Java SDK
+Section: Programming
+
+Format: HTML
+Index: /usr/share/doc/uima/api/index.html
+Files: /usr/share/doc/uima/api/*.html
+

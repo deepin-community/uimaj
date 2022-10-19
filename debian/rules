@@ -1,0 +1,30 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	dh_auto_build -- install
+	dh_auto_build -- javadoc:aggregate --projects !uimaj-examples
+
+	for PAGE in annotationViewer documentAnalyzer cpeGui jcasgen runAE runPearInstaller runPearInstaller runPearMerger runPearPackager validateDescriptor; do \
+	    xsltproc -''-nonet /usr/share/sgml/docbook/stylesheet/xsl/nwalsh/manpages/docbook.xsl debian/manpages/$$PAGE.xml; \
+	done
+
+override_dh_install:
+	dh_install
+
+	# Remove suffixes on binaries
+	mv debian/uima-utils/usr/bin/annotationViewer.sh debian/uima-utils/usr/bin/annotationViewer
+	mv debian/uima-utils/usr/bin/cpeGui.sh           debian/uima-utils/usr/bin/cpeGui
+	mv debian/uima-utils/usr/bin/documentAnalyzer.sh debian/uima-utils/usr/bin/documentAnalyzer
+	mv debian/uima-utils/usr/bin/jcasgen.sh          debian/uima-utils/usr/bin/jcasgen
+	#mv debian/uima-utils/usr/bin/runCPE.sh           debian/uima-utils/usr/bin/runCPE
+	mv debian/uima-utils/usr/bin/runAE.sh            debian/uima-utils/usr/bin/runAE
+	mv debian/uima-utils/usr/bin/runPearInstaller.sh debian/uima-utils/usr/bin/runPearInstaller
+	mv debian/uima-utils/usr/bin/runPearMerger.sh    debian/uima-utils/usr/bin/runPearMerger
+	mv debian/uima-utils/usr/bin/runPearPackager.sh  debian/uima-utils/usr/bin/runPearPackager
+	mv debian/uima-utils/usr/bin/validateDescriptor.sh debian/uima-utils/usr/bin/validateDescriptor
+
+	# Set correct perms (on runUimaClass.sh and setUimaClassPath.sh)
+	chmod +x debian/uima-utils/usr/share/uima/bin/*.sh

@@ -1,0 +1,62 @@
+Description: Disable some modules:
+ - eclipse-plugin-superPom
+ - distr-superPom
+Author: Damien Raude-Morvan <drazzib@debian.org>
+Last-Update: 2010-03-21
+Forwarded: not-needed
+--- a/aggregate-uimaj-eclipse-plugins/pom.xml
++++ b/aggregate-uimaj-eclipse-plugins/pom.xml
+@@ -59,6 +59,7 @@
+   </properties>
+ 
+   <modules>
++<!--
+     <module>../uimaj-ep-debug</module>
+     <module>../uimaj-ep-jcasgen</module>
+     <module>../uimaj-ep-configurator</module>
+@@ -72,5 +73,6 @@
+     <!-- see  https://issues.apache.org/jira/browse/UIMA-2497 -->
+     <module>../uimaj-eclipse-feature-tools</module>
+     <module>../uimaj-eclipse-feature-runtime</module>
++-->
+   </modules>
+ </project>
+--- a/aggregate-uimaj/pom.xml
++++ b/aggregate-uimaj/pom.xml
+@@ -63,11 +63,9 @@
+     <module>../uimaj-examples</module>
+     <module>../uimaj-tools</module>
+     <module>../uimaj-adapter-vinci</module>
+-    <module>../uimaj-adapter-soap</module>
+     <module>../uimaj-test-util</module>
+     <module>../uimaj-component-test-util</module>
+     <module>../jVinci</module>
+-    <module>../aggregate-uimaj-eclipse-plugins</module>
+     <module>../aggregate-uimaj-docbooks</module>
+     <!--module>distr-superPom</module-->
+     <module>../uimaj-document-annotation</module>
+@@ -79,4 +77,4 @@
+     <!--module>../uimaj-internal-tools</module-->
+     <module>../uimaj-bootstrap</module>    
+   </modules>  
+-</project>
+\ No newline at end of file
++</project>
+--- a/pom.xml
++++ b/pom.xml
+@@ -114,6 +114,7 @@
+       <artifactId>uimaj-tools</artifactId>
+       <version>${project.version}</version>
+     </dependency>
++<!--
+     <dependency>
+       <groupId>org.apache.uima</groupId>
+       <artifactId>uimaj-ep-cas-editor</artifactId>
+@@ -159,6 +160,7 @@
+       <artifactId>uimaj-json</artifactId>
+       <version>${project.version}</version>
+     </dependency>    
++-->
+   </dependencies>
+ 
+   

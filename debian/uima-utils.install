@@ -1,0 +1,18 @@
+# .sh are deleted thereafter in debian/rules
+debian/freedesktop/UIMA.xpm usr/share/pixmaps/
+debian/freedesktop/uima-annotationviewer.desktop /usr/share/applications/
+debian/freedesktop/uima-cpegui.desktop /usr/share/applications/
+debian/freedesktop/uima-documentanalyzer.desktop /usr/share/applications/
+src/main/properties/FileConsoleLogger.properties /etc/uima/
+src/main/properties/Logger.properties /etc/uima/
+src/main/scripts/annotationViewer.sh /usr/bin/
+src/main/scripts/cpeGui.sh /usr/bin/
+src/main/scripts/documentAnalyzer.sh /usr/bin/
+src/main/scripts/jcasgen.sh /usr/bin/
+src/main/scripts/runAE.sh /usr/bin/
+src/main/scripts/runPearInstaller.sh /usr/bin/
+src/main/scripts/runPearMerger.sh /usr/bin/
+src/main/scripts/runPearPackager.sh /usr/bin/
+src/main/scripts/runUimaClass.sh /usr/share/uima/bin/
+src/main/scripts/setUimaClassPath.sh /usr/share/uima/bin/
+src/main/scripts/validateDescriptor.sh /usr/bin/

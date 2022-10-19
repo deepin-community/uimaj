@@ -1,0 +1,111 @@
+Description: Fix compat with Java 7:
+ Force usage of org.apache.uima.cas.Type instead of new
+ Type inner class in java.awt.Window.
+Author: Damien Raude-Morvan <drazzib@debian.org>
+--- a/uimaj-tools/src/main/java/org/apache/uima/tools/cvd/AnnotationDisplayCustomizationFrame.java
++++ b/uimaj-tools/src/main/java/org/apache/uima/tools/cvd/AnnotationDisplayCustomizationFrame.java
+@@ -336,17 +336,17 @@
+   private TreeModel createTreeModel(TypeSystem ts) {
+     String typeName = CAS.TYPE_NAME_ANNOTATION;
+     DefaultMutableTreeNode node = new DefaultMutableTreeNode(typeName);
+-    Type type = ts.getType(typeName);
++    org.apache.uima.cas.Type type = ts.getType(typeName);
+     addChildren(node, type, ts);
+     DefaultTreeModel treeModel = new DefaultTreeModel(node);
+     return treeModel;
+   }
+ 
+   @SuppressWarnings("unchecked")
+-  private static void addChildren(DefaultMutableTreeNode node, Type type, TypeSystem ts) {
+-    List<Type> dtrs = ts.getDirectSubtypes(type);
++  private static void addChildren(DefaultMutableTreeNode node, org.apache.uima.cas.Type type, TypeSystem ts) {
++    List<org.apache.uima.cas.Type> dtrs = ts.getDirectSubtypes(type);
+     DefaultMutableTreeNode dtrNode;
+-    Type dtrType;
++    org.apache.uima.cas.Type dtrType;
+     for (int i = 0; i < dtrs.size(); i++) {
+       dtrType = dtrs.get(i);
+       dtrNode = new DefaultMutableTreeNode(dtrType.getName());
+--- a/uimaj-tools/src/main/java/org/apache/uima/tools/cvd/MainFrame.java
++++ b/uimaj-tools/src/main/java/org/apache/uima/tools/cvd/MainFrame.java
+@@ -1654,12 +1654,12 @@
+   }
+ 
+   @SuppressWarnings("unchecked")
+-  private DefaultMutableTreeNode createTypeTree(Type type, TypeSystem ts, String label,
++  private DefaultMutableTreeNode createTypeTree(org.apache.uima.cas.Type type, TypeSystem ts, String label,
+       FSIndexRepository ir) {
+     int size = ir.getIndex(label, type).size();
+     TypeTreeNode typeNode = new TypeTreeNode(type, label, size);
+     DefaultMutableTreeNode node = new DefaultMutableTreeNode(typeNode);
+-    List<Type> types = ts.getDirectSubtypes(type);
++    List<org.apache.uima.cas.Type> types = ts.getDirectSubtypes(type);
+     final int max = types.size();
+     for (int i = 0; i < max; i++) {
+       if (ir.getIndex(label, types.get(i)) == null) {
+--- a/uimaj-tools/src/main/java/org/apache/uima/tools/cvd/tsview/MainFrame.java
++++ b/uimaj-tools/src/main/java/org/apache/uima/tools/cvd/tsview/MainFrame.java
+@@ -69,7 +69,7 @@
+       if (node == null) {
+         return;
+       }
+-      Type t = (Type) node.getUserObject();
++      org.apache.uima.cas.Type t = (org.apache.uima.cas.Type) node.getUserObject();
+       if (t != null) {
+         MainFrame.this.selectedType = t;
+         updateFeatureTable();
+@@ -79,7 +79,7 @@
+ 
+   TypeSystem ts = null;
+ 
+-  private Type selectedType;
++  private org.apache.uima.cas.Type selectedType;
+ 
+   private JTable featureTable = null;
+ 
+@@ -181,12 +181,12 @@
+     ((FeatureTableModel) this.featureTable.getModel()).setType(this.selectedType);
+   }
+ 
+-  private DefaultMutableTreeNode createTypeTree(Type type) {
++  private DefaultMutableTreeNode createTypeTree(org.apache.uima.cas.Type type) {
+     DefaultMutableTreeNode node = new DefaultMutableTreeNode(type);
+     List<?> types = this.ts.getDirectSubtypes(type);
+     final int max = types.size();
+     for (int i = 0; i < max; i++) {
+-      DefaultMutableTreeNode child = createTypeTree((Type) types.get(i));
++      DefaultMutableTreeNode child = createTypeTree((org.apache.uima.cas.Type) types.get(i));
+       node.add(child);
+     }
+     return node;
+@@ -198,11 +198,11 @@
+     }
+     DefaultMutableTreeNode rootNode = (DefaultMutableTreeNode) this.typeTree.getModel().getRoot();
+     rootNode.removeAllChildren();
+-    Type top = this.ts.getTopType();
++    org.apache.uima.cas.Type top = this.ts.getTopType();
+     rootNode.setUserObject(top);
+     List<?> types = this.ts.getDirectSubtypes(top);
+     for (int i = 0; i < types.size(); i++) {
+-      rootNode.add(createTypeTree((Type) types.get(i)));
++      rootNode.add(createTypeTree((org.apache.uima.cas.Type) types.get(i)));
+     }
+     DefaultTreeModel model = (DefaultTreeModel) this.typeTree.getModel();
+     // 1.3 compatability hack.
+--- a/uimaj-tools/src/main/java/org/apache/uima/tools/docanalyzer/DocumentAnalyzer.java
++++ b/uimaj-tools/src/main/java/org/apache/uima/tools/docanalyzer/DocumentAnalyzer.java
+@@ -1192,12 +1192,12 @@
+             if (outputs[j].isType()) {
+               outputTypeList.add(outputs[j].getName());
+               // also add subsumed types
+-              Type t = currentTypeSystem.getType(outputs[j].getName());
++              org.apache.uima.cas.Type t = currentTypeSystem.getType(outputs[j].getName());
+               if (t != null) {
+                 List subsumedTypes = currentTypeSystem.getProperlySubsumedTypes(t);
+                 Iterator it = subsumedTypes.iterator();
+                 while (it.hasNext()) {
+-                  outputTypeList.add(((Type) it.next()).getName());
++                  outputTypeList.add(((org.apache.uima.cas.Type) it.next()).getName());
+                 }
+               }
+             }

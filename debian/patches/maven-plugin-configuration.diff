@@ -1,0 +1,29 @@
+Description: Add the missing maven-plugin-plugin configuration
+ from org.apache.uima:parent-pom which is ignored during the build
+Author: Emmanuel Bourg <ebourg@apache.org>
+Forwarded: not-needed
+--- a/uimaj-parent/pom.xml
++++ b/uimaj-parent/pom.xml
+@@ -265,6 +265,22 @@
+           </execution>
+         </executions>
+       </plugin>
++        <plugin>
++          <groupId>org.apache.maven.plugins</groupId>
++          <artifactId>maven-plugin-plugin</artifactId>
++          <configuration>
++            <skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
++          </configuration>
++          <executions>
++            <execution>
++              <id>default-descriptor</id>
++              <phase>process-classes</phase>
++              <goals>
++                <goal>descriptor</goal>
++              </goals>
++            </execution>
++          </executions>
++        </plugin>
+     </plugins>
+   </build>
+   <profiles>

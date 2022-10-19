@@ -1,0 +1,10 @@
+This document explains how to develop and use components providing
+SOAP web service or using it within the UIMA framework.
+
+When compiling and running apps using the UIMA framework and especially
+the SOAP connecter, you need to add "/usr/share/java/uimaj-adapter-soap.jar"
+to the CLASSPATH.  E.g.
+
+    export CLASSPATH="/usr/share/java/uimaj-adapter-soap.jar:/usr/share/java:."
+    javac Whatever.java
+    java Whatever

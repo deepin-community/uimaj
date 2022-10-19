@@ -1,0 +1,42 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1509395936887
+Build-Date: 171030_2032
+Build-Jdk: 1.8.0_151
+Built-By: MarshallSchor
+Bundle-Activator: org.apache.uima.pear.PearPlugin
+Bundle-Description: Provides an Eclipse Wizard to construct    a PEAR pa
+ ckage
+Bundle-DocURL: http://www.apache.org/
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: Apache UIMA Eclipse: uimaj-ep-pear-packager
+Bundle-SymbolicName: org.apache.uima.pear;singleton:=true
+Bundle-Vendor: The Apache Software Foundation
+Bundle-Version: 2.10.2
+Created-By: Apache Maven Bundle Plugin
+Eclipse-AutoStart: true
+Export-Package: org.apache.uima.pear;version="2.10.2",org.apache.uima.pe
+ ar.actions;version="2.10.2",org.apache.uima.pear.generate;version="2.10
+ .2",org.apache.uima.pear.insd.edit;version="2.10.2",org.apache.uima.pea
+ r.insd.edit.vars;version="2.10.2",org.apache.uima.pear.nature;version="
+ 2.10.2"
+Ignore-Package: org.eclipse.ui,org.eclipse.core.runtime,org.eclipse.ui.d
+ ialogs,org.eclipse.ui.model
+Implementation-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Implementation-Title: Apache UIMA Eclipse: uimaj-ep-pear-packager
+Implementation-Url: http://uima.apache.org
+Implementation-Vendor: The Apache Software Foundation
+Implementation-Vendor-Id: org.apache.uima
+Implementation-Version: 2.10.2
+Import-Package: org.apache.uima.pear.tools,org.eclipse.core.resources,or
+ g.eclipse.jdt.core,org.eclipse.jface.action,org.eclipse.jface.dialogs,o
+ rg.eclipse.jface.operation,org.eclipse.jface.preference,org.eclipse.jfa
+ ce.resource,org.eclipse.jface.viewers,org.eclipse.jface.wizard,org.ecli
+ pse.swt,org.eclipse.swt.events,org.eclipse.swt.graphics,org.eclipse.swt
+ .layout,org.eclipse.swt.widgets,org.eclipse.ui.plugin,org.osgi.framewor
+ k;version="[1.3,2)",org.xml.sax
+Project-Title: Apache UIMA
+Require-Bundle: org.eclipse.jface.text,org.eclipse.text,org.eclipse.ui.e
+ ditors,org.eclipse.ui.workbench.texteditor,org.eclipse.ui.ide,org.eclip
+ se.ui,org.eclipse.ui.workbench,org.eclipse.core.runtime
+Tool: Bnd-1.50.0

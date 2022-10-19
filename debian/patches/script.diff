@@ -1,0 +1,249 @@
+Description: Set default UIMA_HOME=/usr/share/uima/ in scripts
+Author: Damien Raude-Morvan <drazzib@debian.org>
+Last-Update: 2010-03-21
+Forwarded: not-needed
+
+--- a/src/main/scripts/adjustExamplePaths.sh
++++ b/src/main/scripts/adjustExamplePaths.sh
+@@ -19,8 +19,7 @@
+ 
+ if [ "$UIMA_HOME" = "" ]
+ then
+-  echo UIMA_HOME environment variable is not set
+-  exit 1
++	UIMA_HOME=/usr/share/uima/
+ fi
+ 
+ if [ "$JAVA_HOME" = "" ]
+--- a/src/main/scripts/annotationViewer.sh
++++ b/src/main/scripts/annotationViewer.sh
+@@ -19,8 +19,7 @@
+ 
+ if [ "$UIMA_HOME" = "" ]
+ then
+-  echo UIMA_HOME environment variable is not set
+-  exit 1
++	UIMA_HOME=/usr/share/uima/
+ fi
+ 
+ "$UIMA_HOME/bin/runUimaClass.sh" org.apache.uima.tools.AnnotationViewerMain
+--- a/src/main/scripts/cpeGui.sh
++++ b/src/main/scripts/cpeGui.sh
+@@ -19,8 +19,7 @@
+ 
+ if [ "$UIMA_HOME" = "" ]
+ then
+-  echo UIMA_HOME environment variable is not set
+-  exit 1
++	UIMA_HOME=/usr/share/uima/
+ fi
+ 
+ "$UIMA_HOME/bin/runUimaClass.sh" org.apache.uima.tools.cpm.CpmFrame
+--- a/src/main/scripts/cvd.sh
++++ b/src/main/scripts/cvd.sh
+@@ -19,8 +19,7 @@
+ 
+ if [ "$UIMA_HOME" = "" ]
+ then
+-  echo UIMA_HOME environment variable is not set
+-  exit 1
++	UIMA_HOME=/usr/share/uima/
+ fi
+ 
+ UIMA_CVDMAN="-Duima.tools.cvd.manpath=$UIMA_HOME/docs/d"
+--- a/src/main/scripts/deploytool.sh
++++ b/src/main/scripts/deploytool.sh
+@@ -19,8 +19,7 @@
+ 
+ if [ "$UIMA_HOME" = "" ]
+ then
+-  echo UIMA_HOME environment variable is not set
+-  exit 1
++	UIMA_HOME=/usr/share/uima/
+ fi
+ 
+ "$UIMA_HOME/bin/runUimaClass.sh" org.apache.axis.client.AdminClient -lhttp://localhost:8080/axis/services/AdminService $1
+--- a/src/main/scripts/documentAnalyzer.sh
++++ b/src/main/scripts/documentAnalyzer.sh
+@@ -19,8 +19,7 @@
+ 
+ if [ "$UIMA_HOME" = "" ]
+ then
+-  echo UIMA_HOME environment variable is not set
+-  exit 1
++	UIMA_HOME=/usr/share/uima/
+ fi
+ 
+ "$UIMA_HOME/bin/runUimaClass.sh" org.apache.uima.tools.docanalyzer.DocumentAnalyzer
+--- a/src/main/scripts/ibmUimaToApacheUima.sh
++++ b/src/main/scripts/ibmUimaToApacheUima.sh
+@@ -19,8 +19,7 @@
+ 
+ if [ "$UIMA_HOME" = "" ]
+ then
+-  echo UIMA_HOME environment variable is not set
+-  exit 1
++	UIMA_HOME=/usr/share/uima/
+ fi
+ 
+ if [ "$JAVA_HOME" = "" ]
+--- a/src/main/scripts/jcasgen.sh
++++ b/src/main/scripts/jcasgen.sh
+@@ -19,8 +19,7 @@
+ 
+ if [ "$UIMA_HOME" = "" ]
+ then
+-  echo UIMA_HOME environment variable is not set
+-  exit 1
++	UIMA_HOME=/usr/share/uima/
+ fi
+ 
+ if [ $# -ge 1 ]
+@@ -43,4 +42,4 @@
+   else
+     "$UIMA_HOME/bin/runUimaClass.sh" $MAIN -jcasgeninput "$firstarg" -jcasgenoutput "$secondarg"
+     fi  
+-fi
+\ No newline at end of file
++fi
+--- a/src/main/scripts/jcasgen_merge.sh
++++ b/src/main/scripts/jcasgen_merge.sh
+@@ -19,8 +19,7 @@
+ 
+ if [ "$UIMA_HOME" = "" ]
+ then
+-  echo UIMA_HOME environment variable is not set
+-  exit 1
++	UIMA_HOME=/usr/share/uima/
+ fi
+ 
+ 
+--- a/src/main/scripts/runAE.sh
++++ b/src/main/scripts/runAE.sh
+@@ -19,8 +19,7 @@
+ 
+ if [ "$UIMA_HOME" = "" ]
+ then
+-  echo UIMA_HOME environment variable is not set
+-  exit 1
++	UIMA_HOME=/usr/share/uima/
+ fi
+ 
+ "$UIMA_HOME/bin/runUimaClass.sh" org.apache.uima.tools.RunAE $@
+--- a/src/main/scripts/runCPE.sh
++++ b/src/main/scripts/runCPE.sh
+@@ -19,8 +19,7 @@
+ 
+ if [ "$UIMA_HOME" = "" ]
+ then
+-  echo UIMA_HOME environment variable is not set
+-  exit 1
++	UIMA_HOME=/usr/share/uima/
+ fi
+ 
+ "$UIMA_HOME/bin/runUimaClass.sh" org.apache.uima.examples.cpe.SimpleRunCPE $@
+--- a/src/main/scripts/runPearInstaller.sh
++++ b/src/main/scripts/runPearInstaller.sh
+@@ -19,8 +19,7 @@
+ 
+ if [ "$UIMA_HOME" = "" ]
+ then
+-  echo UIMA_HOME environment variable is not set
+-  exit 1
++	UIMA_HOME=/usr/share/uima/
+ fi
+ 
+ "$UIMA_HOME/bin/runUimaClass.sh" org.apache.uima.tools.pear.install.InstallPear
+--- a/src/main/scripts/runPearMerger.sh
++++ b/src/main/scripts/runPearMerger.sh
+@@ -19,8 +19,7 @@
+ 
+ if [ "$UIMA_HOME" = "" ]
+ then
+-  echo UIMA_HOME environment variable is not set
+-  exit 1
++	UIMA_HOME=/usr/share/uima/
+ fi
+ 
+ "$UIMA_HOME/bin/runUimaClass.sh" org.apache.uima.tools.pear.merger.PMController $@
+--- a/src/main/scripts/runPearPackager.sh
++++ b/src/main/scripts/runPearPackager.sh
+@@ -19,8 +19,7 @@
+ 
+ if [ "$UIMA_HOME" = "" ]
+ then
+-  echo UIMA_HOME environment variable is not set
+-  exit 1
++	UIMA_HOME=/usr/share/uima/
+ fi
+ 
+ "$UIMA_HOME/bin/runUimaClass.sh" org.apache.uima.tools.pear.packager.PearPackager $@
+--- a/src/main/scripts/runUimaClass.sh
++++ b/src/main/scripts/runUimaClass.sh
+@@ -19,8 +19,7 @@
+ 
+ if [ "$UIMA_HOME" = "" ]
+ then
+-  echo UIMA_HOME environment variable is not set
+-  exit 1
++	UIMA_HOME=/usr/share/uima/
+ fi
+ 
+ # set default ActiveMQ home 
+@@ -37,6 +36,8 @@
+ fi
+ 
+ #Set jar search order of: UIMA_CLASSPATH uima activemq(optional) tomcat(optional) CLASSPATH
++# Debian: Include /usr/share/uima/components/, /usr/local/share/uima/components/ and $HOME/.uima/components/
++UIMA_CLASSPATH=$UIMA_CLASSPATH:/usr/share/uima/components/:/usr/local/share/uima/components/:$HOME/.uima/components/
+ UIMA_CLASSPATH=$UIMA_CLASSPATH:$UIMA_HOME/examples/resources
+ UIMA_CLASSPATH=$UIMA_CLASSPATH:$UIMA_HOME/lib
+ if [ -e "$ACTIVEMQ_HOME" ] 
+--- a/src/main/scripts/setUimaClassPath.sh
++++ b/src/main/scripts/setUimaClassPath.sh
+@@ -19,8 +19,7 @@
+ 
+ if [ "$UIMA_HOME" = "" ]
+ then
+-  echo UIMA_HOME environment variable is not set
+-  exit 1
++	UIMA_HOME=/usr/share/uima/
+ fi
+ LOCAL_SAVED_UIMA_CLASSPATH=$UIMA_CLASSPATH
+ UIMA_CLASSPATH=$UIMA_HOME/examples/resources
+--- a/src/main/scripts/startVNS.sh
++++ b/src/main/scripts/startVNS.sh
+@@ -19,8 +19,7 @@
+ 
+ if [ "$UIMA_HOME" = "" ]
+ then
+-  echo UIMA_HOME environment variable is not set
+-  exit 1
++	UIMA_HOME=/usr/share/uima/
+ fi
+ 
+ if [ "$JAVA_HOME" = "" ]
+--- a/src/main/scripts/startVinciService.sh
++++ b/src/main/scripts/startVinciService.sh
+@@ -19,8 +19,7 @@
+ 
+ if [ "$UIMA_HOME" = "" ]
+ then
+-  echo UIMA_HOME environment variable is not set
+-  exit 1
++	UIMA_HOME=/usr/share/uima/
+ fi
+ 
+ if [ "$1" = "" ];
+--- a/src/main/scripts/validateDescriptor.sh
++++ b/src/main/scripts/validateDescriptor.sh
+@@ -19,8 +19,7 @@
+ 
+ if [ "$UIMA_HOME" = "" ]
+ then
+-  echo UIMA_HOME environment variable is not set
+-  exit 1
++	UIMA_HOME=/usr/share/uima/
+ fi
+ 
+ "$UIMA_HOME/bin/runUimaClass.sh" org.apache.uima.tools.ValidateDescriptor $@

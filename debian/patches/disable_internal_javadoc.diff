@@ -1,0 +1,13 @@
+--- a/pom.xml
++++ b/pom.xml
+@@ -194,8 +194,8 @@
+         <executions>
+           <execution>
+             <id>javadocs-distr</id> <!-- name should match one in parent-pom --> 
+-            <phase>prepare-package</phase>  <!-- must come before package which uses the results -->
+-            <!--phase>deploy</phase--> <!-- comment above and uncomment to disable javadocs, for testing/experimentation, with assembly:assembly-->
++            <!--phase>prepare-package</phase-->  <!-- must come before package which uses the results -->
++            <phase>deploy</phase> <!-- comment above and uncomment to disable javadocs, for testing/experimentation, with assembly:assembly-->
+             <goals>
+               <goal>javadoc</goal>
+             </goals>

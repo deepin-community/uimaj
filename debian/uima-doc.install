@@ -1,0 +1,12 @@
+#uima-docbook-tool/styles/uima-style/css/	/usr/share/doc/uima/manuals/
+#uima-docbooks/target/images			/usr/share/doc/uima/manuals/
+#uima-docbooks/target/index.html			/usr/share/doc/uima/manuals/
+#uima-docbooks/target/overview_and_setup/*.html	/usr/share/doc/uima/manuals/overview_and_setup/
+#uima-docbooks/target/overview_and_setup/*.pdf	/usr/share/doc/uima/manuals/overview_and_setup/
+#uima-docbooks/target/references/*.html		/usr/share/doc/uima/manuals/references/
+#uima-docbooks/target/references/*.pdf		/usr/share/doc/uima/manuals/references/
+#uima-docbooks/target/tools/*.html		/usr/share/doc/uima/manuals/tools/
+#uima-docbooks/target/tools/*.pdf		/usr/share/doc/uima/manuals/tools/
+#uima-docbooks/target/tutorials_and_users_guides/*.html	/usr/share/doc/uima/manuals/tutorials_and_users_guides/
+#uima-docbooks/target/tutorials_and_users_guides/*.pdf	/usr/share/doc/uima/manuals/tutorials_and_users_guides/
+target/site/apidocs/*			/usr/share/doc/uima/api/

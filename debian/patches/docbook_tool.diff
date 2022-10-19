@@ -1,0 +1,141 @@
+Description: uima-docbooks & tools: fix classpath and
+ use system wide fop / saxon / docbook-xsl
+Author: Damien Raude-Morvan <drazzib@debian.org>
+Last-Update: 2010-04-05
+Forwarded: not-needed
+--- a/uima-docbook-tool/build/build-docbook.xml
++++ b/uima-docbook-tool/build/build-docbook.xml
+@@ -91,8 +91,8 @@
+ 
+ 		<property name="docbook.tools.lib.dir" value="${docbook.tool.project}/tools/common-lib"/>
+ 		<property name="docbook.ref.dir" value="${docbook.tool.project}/tools/docbook-versions"/>
+-		<property name="docbook.xsl.dir" value="${docbook.ref.dir}/docbook-xsl-${docbook.xsl.version}"/>
+-		<property name="docbook.xml.dir" value="${docbook.ref.dir}/docbook-xml-${docbook.xml.version}"/>
++		<property name="docbook.xsl.dir" value="/usr/share/xml/docbook/stylesheet/docbook-xsl/"/>
++		<property name="docbook.xml.dir" value="/usr/share/xml/docbook/schema/dtd/4.5/"/>
+ 		<property name="saxon.dir"
+       value="${docbook.tool.project}/tools/saxon-versions/saxon-${saxon.version}"/>
+     <property name="fop.dir"
+@@ -114,17 +114,24 @@
+ 
+ 		<path id="saxon_and_fop.classpath">
+ 			<!-- xercesImpl.jar comes first to allow using XInclude -->
+-			<pathelement location="${docbook.tools.lib.dir}/xercesImpl-2.7.1.jar"/>
+-			<pathelement location="${docbook.tools.lib.dir}/xml-apis-1.3.02.jar"/>
+-			<fileset dir="${docbook.tool.project}/tools/fop-versions/fop-${fop.version}" includes="*.jar"/>
+-			<fileset dir="${saxon.dir}" includes="*.jar"/>
++			<pathelement location="/usr/share/java/xercesImpl.jar"/>
++			<pathelement location="/usr/share/java/xml-apis.jar"/>
++			<pathelement location="/usr/share/java/xml-commons-resolver-1.1.jar"/>
++			<fileset dir="/usr/share/java/" includes="fop.jar"/>
++			<fileset dir="/usr/share/java/" includes="saxon.jar"/>
++			<!--
+ 			<fileset dir="${docbook.tools.lib.dir}" includes="*.jar"/>
++			-->
+ 
++			<!--
+ 			<fileset dir="${docbook.xsl.dir}/extensions">
+ 				<include name="${xslt-db.jar}"/>
+ 			</fileset>
+-
++			-->
++			
++			<!--
+ 			<fileset dir="${jai.dir}" includes="*.jar"/>
++			-->
+ 
+ 			<!--  Needed to find CatalogManager.properties -->
+ 			<pathelement
+@@ -151,8 +158,7 @@
+ 	<!-- ==                                                                       == -->
+ 	<!-- =========================================================================== -->
+ 	<target name="prepare" depends="setup-common-properties-per-build, setup-availables, 
+-		make-temp-dir, test-saxon-available, test-docbook-available, 
+-		test-fop-available, test-jai-available">
++		make-temp-dir">
+ 	</target>
+ 	
+ 	<target name="make-temp-dir">
+@@ -204,4 +210,4 @@
+ 		</copy>
+ 
+ 	</target>
+-</project>
+\ No newline at end of file
++</project>
+--- a/uima-docbooks/src/styles/top/html-single.xsl
++++ b/uima-docbooks/src/styles/top/html-single.xsl
+@@ -28,7 +28,7 @@
+        and their href strings must be literal (no variables allowed) -->
+     
+   <!-- import docbook system from the shared uima-docbook-tool project -->  
+-  <xsl:import href="../../../../uima-docbook-tool/tools/docbook-versions/docbook-xsl-1.72.0/html/docbook.xsl" />
++  <xsl:import href="/usr/share/xml/docbook/stylesheet/docbook-xsl/html/docbook.xsl" />
+   
+   <!-- import the standard uima-style of formatting from the shared uima-docbook-tool project -->
+   <xsl:import href="../../../../uima-docbook-tool/styles/uima-style/top/html-single.xsl" />  
+--- a/uima-docbooks/src/styles/top/pdf.xsl
++++ b/uima-docbooks/src/styles/top/pdf.xsl
+@@ -28,7 +28,7 @@
+        and their href strings must be literal (no variables allowed) -->
+   
+   <!-- import docbook system from the shared uima-docbook-tool project -->  
+-  <xsl:import href="../../../../uima-docbook-tool/tools/docbook-versions/docbook-xsl-1.72.0/fo/docbook.xsl" />
++  <xsl:import href="/usr/share/xml/docbook/stylesheet/docbook-xsl/fo/docbook.xsl" />
+   
+   <!-- import the standard uima-style of formatting from the shared uima-docbook-tool project -->
+   <xsl:import href="../../../../uima-docbook-tool/styles/uima-style/top/pdf.xsl" />  
+--- a/uima-docbook-tool/catalog/docbook.version_4.5/xml-catalog.xml
++++ b/uima-docbook-tool/catalog/docbook.version_4.5/xml-catalog.xml
+@@ -27,18 +27,18 @@
+   <!-- Translate DocBook XML 4.5 system ids to local file names -->
+   <rewriteSystem
+     systemIdStartString="http://www.oasis-open.org/docbook/xml/4.5/"
+-    rewritePrefix="../../tools/docbook-versions/docbook-xml-4.5/"/>
++    rewritePrefix="/usr/share/xml/docbook/schema/dtd/4.5/"/>
+  
+   <rewriteSystem
+     systemIdStartString="http://docbook.sourceforge.net/release/xsl/current/"
+-    rewritePrefix="../../tools/docbook-versions/docbook-xsl-1.72.0/"/>
++    rewritePrefix="/usr/share/xml/docbook/stylesheet/docbook-xsl/"/>
+ 
+   <!-- Translate DocBook XML 4.5 public ids to local file names -->
+   <nextCatalog
+-    catalog="../../tools/docbook-versions/docbook-xml-4.5/catalog.xml"/>
++    catalog="/usr/share/xml/docbook/schema/dtd/4.5/catalog.xml"/>
+ 
+   <rewriteURI
+     uriStartString="http://docbook.sourceforge.net/release/xsl/current/"
+-    rewritePrefix="../../tools/docbook-versions/docbook-xsl-1.72.0/"/>
++    rewritePrefix="/usr/share/xml/docbook/stylesheet/docbook-xsl/"/>
+ 
+ </catalog>
+--- a/uima-docbook-tool/build/process-one-book.xml
++++ b/uima-docbook-tool/build/process-one-book.xml
+@@ -125,14 +125,15 @@
+   
+   <target name="fop_conditionally" description="internal - runs fop conditionally"
+     unless="do_olinkdb_only">
+-    
+-    <java classname="${fop.main.class}" fork="true" maxmemory="256m"
+-      dir="${target.dir.path}/${chapter_name}" classpathref="saxon_and_fop.classpath">
++   
++    <exec executable="/usr/bin/fop" dir="${target.dir.path}/${chapter_name}">
++<!--
+       <arg value="-c"/>
+       <arg value="${fop.config}"/>
++-->
+       <arg value="${target.dir.path}/${chapter_name}/${docbook.outname}.pdf_src.xml"/>
+       <arg value="${target.dir.path}/${chapter_name}/${docbook.outname}.pdf"/>
+-    </java>
++    </exec>
+     
+   </target>
+   
+@@ -235,4 +236,4 @@
+     </sequential>
+   </macrodef>
+ 
+-</project>
+\ No newline at end of file
++</project>

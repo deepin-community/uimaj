@@ -1,0 +1,12 @@
+Files removed from upstream source tarball
+==========================================
+
+Removed:
+ * uima-docbook-tool/tools/common-lib/*.jar
+ * uimaj-eclipse-update-site/features/*.jar
+
+Retained:
+ * uimaj-core/src/test/resources/ClassLoaderTest/classLoadingTest.jar:
+  - source code is here :
+    uimaj-core/src/test/java/org/apache/uima/internal/util/ClassloadingTestClass.java
+

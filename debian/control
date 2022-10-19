@@ -1,0 +1,218 @@
+Source: uimaj
+Section: java
+Priority: optional
+Maintainer: Debian Java Maintainers <pkg-java-maintainers@lists.alioth.debian.org>
+Uploaders:
+ Fabien Poulard <fabien.poulard@univ-nantes.fr>,
+ Damien Raude-Morvan <drazzib@debian.org>,
+ Emmanuel Bourg <ebourg@apache.org>
+Build-Depends:
+ debhelper (>= 11),
+ default-jdk,
+ default-jdk-doc,
+ docbook-xml,
+ docbook-xsl,
+ fop,
+ junit4,
+ libaxis-java,
+ libbuild-helper-maven-plugin-java,
+ libcommons-io-java,
+ libjaxp1.3-java,
+ liblog4j1.2-java,
+ libmaven-install-plugin-java,
+ libmaven-javadoc-plugin-java,
+ libmaven-plugin-testing-java,
+ libmaven-plugin-tools-java (>= 2.8),
+ libmaven3-core-java,
+ libplexus-build-api-java (>= 0.0.7),
+ libsaxon-java,
+ libxerces2-java,
+ libxml-commons-resolver1.1-java,
+ maven-debian-helper (>= 2.0~),
+ xsltproc
+Standards-Version: 4.3.0
+Vcs-Git: https://salsa.debian.org/java-team/uimaj.git
+Vcs-Browser: https://salsa.debian.org/java-team/uimaj
+Homepage: https://uima.apache.org
+
+Package: libuima-core-java
+Architecture: all
+Depends: ${misc:Depends}
+Recommends: liblog4j1.2-java
+Description: Core library for the UIMA framework
+ Apache UIMA is an implementation of the OASIS-UIMA specifications.
+ .
+ OASIS UIMA Committee: <http://www.oasis-open.org/committees/uima/>.
+ .
+ Unstructured Information Management applications are software systems
+ that analyze large volumes of unstructured information in order to
+ discover knowledge that is relevant to an end user.
+ .
+ An example UIM application might ingest plain text and identify
+ entities, such as persons, places, organizations; or relations,
+ such as works-for or located-at.
+ .
+ This library implements in Java the core features of the UIMA specification.
+
+Package: libuima-vinci-java
+Architecture: all
+Depends: ${misc:Depends}
+Description: Library to handle Vinci web service protocol
+ Apache UIMA is an implementation of the OASIS-UIMA specifications.
+ .
+ OASIS UIMA Committee: <http://www.oasis-open.org/committees/uima/>.
+ .
+ Unstructured Information Management applications are software systems
+ that analyze large volumes of unstructured information in order to
+ discover knowledge that is relevant to an end user.
+ .
+ An example UIM application might ingest plain text and identify
+ entities, such as persons, places, organizations; or relations,
+ such as works-for or located-at.
+ .
+ This library is part of the UIMA framework. It implements in Java the code
+ necessary to handle the Vinci web service protocol.
+
+Package: libuima-adapter-vinci-java
+Architecture: all
+Depends: libuima-core-java (>= ${source:Version}), ${misc:Depends}
+Recommends: libuima-vinci-java (>= ${source:Version})
+Description: Library to provide Vinci web services within UIMA
+ Apache UIMA is an implementation of the OASIS-UIMA specifications.
+ .
+ OASIS UIMA Committee: <http://www.oasis-open.org/committees/uima/>.
+ .
+ Unstructured Information Management applications are software systems
+ that analyze large volumes of unstructured information in order to
+ discover knowledge that is relevant to an end user.
+ .
+ An example UIM application might ingest plain text and identify
+ entities, such as persons, places, organizations; or relations,
+ such as works-for or located-at.
+ .
+ This library implements in Java an adapter to connect a Vinci web service with
+ the UIMA framework.
+
+Package: libuima-cpe-java
+Architecture: all
+Depends: libuima-core-java (>= ${source:Version}), ${misc:Depends}
+Suggests: libuima-adapter-vinci-java (>= ${source:Version})
+Description: Library for the UIMA Collection Processing Engine
+ Apache UIMA is an implementation of the OASIS-UIMA specifications.
+ .
+ OASIS UIMA Committee: <http://www.oasis-open.org/committees/uima/>.
+ .
+ Unstructured Information Management applications are software systems
+ that analyze large volumes of unstructured information in order to
+ discover knowledge that is relevant to an end user.
+ .
+ An example UIM application might ingest plain text and identify
+ entities, such as persons, places, organizations; or relations,
+ such as works-for or located-at.
+ .
+ This library implements in Java the collection processing engine for the UIMA
+ framework.
+
+Package: libuima-document-annotation-java
+Architecture: all
+Depends: libuima-core-java (>= ${source:Version}), ${misc:Depends}
+Description: Library for the UIMA document annotation
+ Apache UIMA is an implementation of the OASIS-UIMA specifications.
+ .
+ OASIS UIMA Committee: <http://www.oasis-open.org/committees/uima/>.
+ .
+ Unstructured Information Management applications are software systems
+ that analyze large volumes of unstructured information in order to
+ discover knowledge that is relevant to an end user.
+ .
+ An example UIM application might ingest plain text and identify
+ entities, such as persons, places, organizations; or relations,
+ such as works-for or located-at.
+ .
+ This library implements in Java the document annotation for the UIMA framework.
+
+Package: libuima-tools-java
+Architecture: all
+Depends: libuima-core-java (>= ${source:Version}), ${misc:Depends}
+Suggests: libmaven3-core-java
+Description: UIMA library for the UIMA tools
+ Apache UIMA is an implementation of the OASIS-UIMA specifications.
+ .
+ OASIS UIMA Committee: <http://www.oasis-open.org/committees/uima/>.
+ .
+ Unstructured Information Management applications are software systems
+ that analyze large volumes of unstructured information in order to
+ discover knowledge that is relevant to an end user.
+ .
+ An example UIM application might ingest plain text and identify
+ entities, such as persons, places, organizations; or relations,
+ such as works-for or located-at.
+ .
+ This library implements in Java the classes for the tools provided with the
+ Apache UIMA framework.
+
+Package: uima-utils
+Architecture: all
+Depends:
+ default-jre | java5-runtime,
+ libuima-core-java (>= ${source:Version}),
+ libuima-tools-java (>= ${source:Version}),
+ ${misc:Depends}
+Recommends:
+ libuima-adapter-vinci-java (>= ${source:Version}),
+ libuima-cpe-java (>= ${source:Version}),
+ libuima-document-annotation-java (>= ${source:Version})
+Description: UIMA tools
+ Apache UIMA is an implementation of the OASIS-UIMA specifications.
+ .
+ OASIS UIMA Committee: <http://www.oasis-open.org/committees/uima/>.
+ .
+ Unstructured Information Management applications are software systems
+ that analyze large volumes of unstructured information in order to
+ discover knowledge that is relevant to an end user.
+ .
+ An example UIM application might ingest plain text and identify
+ entities, such as persons, places, organizations; or relations,
+ such as works-for or located-at.
+ .
+ This package provides the UIMA tools : annotationViewer, cpeGui,
+ documentAnalyzer, jcasgen, runAE, runCPE, runPearInstaller, runPearMerger,
+ runPearPackager
+
+Package: uima-examples
+Architecture: all
+Depends: libuima-core-java (>= ${source:Version}), ${misc:Depends}
+Description: Examples of UIMA components
+ Apache UIMA is an implementation of the OASIS-UIMA specifications.
+ .
+ OASIS UIMA Committee: <http://www.oasis-open.org/committees/uima/>.
+ .
+ Unstructured Information Management applications are software systems
+ that analyze large volumes of unstructured information in order to
+ discover knowledge that is relevant to an end user.
+ .
+ An example UIM application might ingest plain text and identify
+ entities, such as persons, places, organizations; or relations,
+ such as works-for or located-at.
+ .
+ This package provides some examples of UIMA components.
+
+Package: uima-doc
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}
+Recommends: default-jdk-doc
+Description: Documentation for the Apache UIMA framework
+ Apache UIMA is an implementation of the OASIS-UIMA specifications.
+ .
+ OASIS UIMA Committee: <http://www.oasis-open.org/committees/uima/>.
+ .
+ Unstructured Information Management applications are software systems
+ that analyze large volumes of unstructured information in order to
+ discover knowledge that is relevant to an end user.
+ .
+ An example UIM application might ingest plain text and identify
+ entities, such as persons, places, organizations; or relations,
+ such as works-for or located-at.
+ .
+ All the documentations to run the UIMA framework.

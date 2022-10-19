@@ -1,0 +1,44 @@
+Description: Disables the integration tests for jcasgen-maven-plugin, they fail
+ to run probably due to an incompatible version of Maven and/or maven-invoker-plugin
+Author: Emmanuel Bourg <ebourg@apache.org>
+Forwarded: not-needed
+--- a/jcasgen-maven-plugin/pom.xml
++++ b/jcasgen-maven-plugin/pom.xml
+@@ -114,37 +114,6 @@
+     </pluginManagement>
+ 	
+ 		<plugins>
+-			<plugin>
+-				<artifactId>maven-invoker-plugin</artifactId>
+-				<!-- <version>1.7</version> 1.8 from superpom -->
+-				<configuration>
+-					<projectsDirectory>src/it</projectsDirectory>
+-					<cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
+-					<pomIncludes>
+-						<pomInclude>*/pom.xml</pomInclude>
+-					</pomIncludes>
+-					<settingsFile>src/it/settings.xml</settingsFile>
+-					<localRepositoryPath>${project.build.directory}/local-repo</localRepositoryPath>
+-					<postBuildHookScript>verify.bsh</postBuildHookScript>
+-					<goals>
+-						<goal>clean</goal>
+-						<goal>package</goal>
+-						<goal>integration-test</goal>
+-					</goals>
+-					<!-- change this next line by toggling the "!" character to include / exclude the long-running m2e test
+-					     It is normally excluded -->
+-					<invokerTest>classpath,multimodule,simple,!m2e</invokerTest>
+-				</configuration>
+-				<executions>
+-					<execution>
+-						<id>integration-test</id>
+-						<goals>
+-							<goal>install</goal>
+-							<goal>run</goal>
+-						</goals>
+-					</execution>
+-				</executions>
+-			</plugin>
+ 		</plugins>
+ 	</build>
+ </project>

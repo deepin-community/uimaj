@@ -1,0 +1,16 @@
+/etc/uima /usr/share/uima/config
+
+/usr/share/java/uimaj-bootstrap.jar /usr/share/uima/lib/uimaj-bootstrap.jar
+/usr/share/java/uimaj-core.jar /usr/share/uima/lib/uima-core.jar
+/usr/share/java/uimaj-document-annotation.jar /usr/share/uima/lib/uima-document-annotation.jar
+/usr/share/java/uimaj-cpe.jar /usr/share/uima/lib/uima-cpe.jar
+/usr/share/java/uimaj-tools.jar /usr/share/uima/lib/uima-tools.jar
+##/lib/uima-examples.jar
+##/usr/share/java/uimaj-adapter-soap.jar /usr/share/uima/lib/uima-adapter-soap.jar
+/usr/share/java/uimaj-adapter-vinci.jar /usr/share/uima/lib/uima-adapter-vinci.jar
+/usr/share/java/jVinci.jar /usr/share/uima/lib/jVinci.jar
+
+##uimaj-as-core.jar
+##uimaj-as-activemq.jar
+##uimaj-as-jms.jar
+

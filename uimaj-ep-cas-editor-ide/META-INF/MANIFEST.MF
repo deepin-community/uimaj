@@ -1,0 +1,68 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1509396015704
+Build-Date: 171030_2032
+Build-Jdk: 1.8.0_151
+Built-By: MarshallSchor
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.apache.uima.caseditor.ide.CasEditorIdePlugin
+Bundle-Description: Allows editing the contents of a saved CAS
+Bundle-DocURL: http://www.apache.org/
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: Apache UIMA Eclipse: uimaj-ep-cas-editor-ide
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-SymbolicName: org.apache.uima.caseditor.ide;singleton:=true
+Bundle-Vendor: The Apache Software Foundation
+Bundle-Version: 2.10.2
+Created-By: Apache Maven Bundle Plugin
+Export-Package: org.apache.uima.caseditor.ide;uses:="org.apache.uima.cas
+ editor,org.eclipse.core.resources,org.apache.uima.caseditor.core.model.
+ dotcorpus,org.eclipse.ui.plugin,org.eclipse.jface.preference,org.eclips
+ e.core.runtime.preferences,org.apache.uima.cas,org.eclipse.swt.widgets,
+ org.apache.uima.caseditor.editor.fsview,org.apache.uima.caseditor.edito
+ r.styleview,org.apache.uima.caseditor.editor.editview,org.apache.uima.c
+ aseditor.editor,org.eclipse.swt.events,org.eclipse.jface.util,org.apach
+ e.uima.caseditor.ide.searchstrategy,org.eclipse.swt.layout,org.apache.u
+ ima.caseditor.core.model,org.eclipse.swt,org.eclipse.jface.viewers,org.
+ eclipse.ui.views.navigator";version="2.10.2",org.apache.uima.caseditor.
+ ide.searchstrategy;uses:="org.eclipse.core.resources,org.apache.uima.ca
+ seditor";version="2.10.2",org.apache.uima.caseditor.ide.wizards;uses:="
+ org.eclipse.core.resources,org.eclipse.jface.viewers,org.eclipse.ui.wiz
+ ards.datatransfer,org.apache.uima.resource,org.apache.uima,javax.swing.
+ text,org.apache.uima.util,org.apache.uima.resource.metadata,javax.swing
+ .text.rtf,org.apache.uima.cas,org.apache.uima.caseditor.core,org.apache
+ .uima.internal.util,org.apache.uima.caseditor.ide,org.apache.uima.cased
+ itor,org.eclipse.swt.widgets,org.eclipse.jface.dialogs,org.eclipse.jfac
+ e.wizard,org.eclipse.jface.operation,org.eclipse.jface.preference,org.e
+ clipse.swt.events,org.eclipse.swt,org.eclipse.swt.layout,org.eclipse.jf
+ ace.layout,org.eclipse.swt.graphics";version="2.10.2"
+Ignore-Package: org.osgi.framework,org.eclipse.ui,org.eclipse.core.runti
+ me,org.eclipse.ui.dialogs,org.eclipse.ui.model,org.eclipse.ui.part
+Implementation-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Implementation-Title: Apache UIMA Eclipse: uimaj-ep-cas-editor-ide
+Implementation-Url: http://uima.apache.org
+Implementation-Vendor: The Apache Software Foundation
+Implementation-Vendor-Id: org.apache.uima
+Implementation-Version: 2.10.2
+Import-Package: javax.swing.text,javax.swing.text.rtf,org.apache.uima,or
+ g.apache.uima.cas,org.apache.uima.caseditor;version="[2.10,3)",org.apac
+ he.uima.caseditor.core;version="[2.10,3)",org.apache.uima.caseditor.cor
+ e.model;version="[2.10,3)",org.apache.uima.caseditor.core.model.dotcorp
+ us;version="[2.10,3)",org.apache.uima.caseditor.editor;version="[2.10,3
+ )",org.apache.uima.caseditor.editor.editview;version="[2.10,3)",org.apa
+ che.uima.caseditor.editor.fsview;version="[2.10,3)",org.apache.uima.cas
+ editor.editor.styleview;version="[2.10,3)",org.apache.uima.internal.uti
+ l,org.apache.uima.resource,org.apache.uima.resource.metadata,org.apache
+ .uima.util,org.eclipse.core.resources,org.eclipse.core.runtime.preferen
+ ces;version="[3.3,4)",org.eclipse.jface.dialogs,org.eclipse.jface.layou
+ t,org.eclipse.jface.operation,org.eclipse.jface.preference,org.eclipse.
+ jface.util,org.eclipse.jface.viewers,org.eclipse.jface.wizard,org.eclip
+ se.swt,org.eclipse.swt.events,org.eclipse.swt.graphics,org.eclipse.swt.
+ layout,org.eclipse.swt.widgets,org.eclipse.ui.plugin,org.eclipse.ui.vie
+ ws.navigator,org.eclipse.ui.wizards.datatransfer
+Project-Title: Apache UIMA
+Require-Bundle: org.eclipse.jface.text,org.eclipse.text,org.eclipse.ui.e
+ ditors,org.eclipse.ui.workbench.texteditor,org.eclipse.ui.ide,org.eclip
+ se.ui,org.eclipse.ui.workbench,org.eclipse.core.runtime,org.eclipse.cor
+ e.resources,org.junit4;resolution:=optional
+Tool: Bnd-1.50.0

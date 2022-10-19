@@ -1,0 +1,12 @@
+Document: uima-tutorials
+Title: Tutorials and Users Guide for UIMA Java SDK
+Author: Apache Software Foundation
+Abstract: Tutorials and Users Guide for UIMA Java SDK
+Section: Science/Data Analysis
+
+Format: HTML
+Index: /usr/share/doc/uima/manuals/tutorials_and_users_guides/tutorials_and_users_guides.html
+Files: /usr/share/doc/uima/manuals/tutorials_and_users_guides/tutorials_and_users_guides.html
+
+Format: PDF
+Files: /usr/share/doc/uima/manuals/tutorials_and_users_guides/tutorials_and_users_guides.pdf

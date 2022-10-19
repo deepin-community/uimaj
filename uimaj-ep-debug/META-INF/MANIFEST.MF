@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1509395877113
+Build-Date: 171030_2032
+Build-Jdk: 1.8.0_151
+Built-By: MarshallSchor
+Bundle-Activator: org.apache.uima.ep_debug.DebugPlugin
+Bundle-Description: Adds structure knowledge for commonUIMA data structu
+ res to the Eclipse Debug displays
+Bundle-DocURL: http://www.apache.org/
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: Apache UIMA Eclipse: uimaj-ep-debug
+Bundle-SymbolicName: org.apache.uima.debug;singleton:=true
+Bundle-Vendor: The Apache Software Foundation
+Bundle-Version: 2.10.2
+Created-By: Apache Maven Bundle Plugin
+Eclipse-AutoStart: true
+Export-Package: org.apache.uima.ep_debug;version="2.10.2"
+Ignore-Package: org.eclipse.core.runtime
+Implementation-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Implementation-Title: Apache UIMA Eclipse: uimaj-ep-debug
+Implementation-Url: http://uima.apache.org
+Implementation-Vendor: The Apache Software Foundation
+Implementation-Vendor-Id: org.apache.uima
+Implementation-Version: 2.10.2
+Import-Package: org.eclipse.jdt.internal.debug.ui,org.eclipse.jface.pref
+ erence,org.eclipse.ui,org.eclipse.ui.plugin,org.osgi.framework;version=
+ "[1.8,2)"
+Project-Title: Apache UIMA
+Require-Bundle: org.eclipse.core.runtime
+Tool: Bnd-1.50.0
